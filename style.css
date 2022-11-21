@@ -1,0 +1,74 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #a4d2f2;
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+}
+h1 {
+    font-size: 1.7em;
+    text-align: center;
+    color: #f47c58;
+}
+.question {
+    font-size: 1em;
+    margin: 1em;
+}
+.answer {
+    font-size: 0.92em;
+    margin: 1.2em 2em;
+}
+.faq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    padding: 2em;
+    border-radius: 5px;
+    background: #e6e6e5;
+}
+.questions {
+    width: 95%;
+    margin: 0.7em 0;
+    border-radius: 5px;
+    background: #fefefd;
+    cursor: pointer;
+    height: 3.5em;
+    transition: height 1s linear;
+}
+.questions div {
+    position: relative;
+    top: -35px;
+    opacity: 0;
+    transition: all 1s linear;
+}
+.questions.revealed {
+    height: 6em;
+}
+.questions .revealed {
+    opacity: 1;
+    top: 0;
+}
+.question::before {
+    content: url(https://img.icons8.com/external-outline-astudio/20/f47c58/external-arrow-arrow-outline-astudio-28.png);
+    margin: 0 0.8em;
+    display: inline-block;
+}
+.question.rotate::before {
+    transform: rotate(-90deg);
+}
+
+@media (max-width: 700px) {
+    .faq {
+        width: 80%;
+    }
+    .questions.revealed {
+        height: 8em;
+    }
+}
